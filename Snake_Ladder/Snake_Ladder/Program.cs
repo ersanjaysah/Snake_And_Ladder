@@ -15,15 +15,33 @@ namespace Snake_Ladder
             while (start < finish)
             {
                 int randomDie = obj.Next(1, 7);
-                Console.WriteLine(randomDie);
                 rollDie++;
-
-                Console.WriteLine(rollDie);
 
                 string[] names = new string[] { "no play", "ladder", "snake" };
                 Random rand = new Random();
                 int index = rand.Next(names.Length);
-                start++;
+
+
+                if (names[index] == "ladder")
+                {
+                    start += randomDie;
+                    if (start > 100)
+                    {
+                        start -= randomDie;
+                    }
+                }
+                else if (names[index] == "snake")
+                {
+                    start -= randomDie;
+                    if (start < 0)
+                    {
+                        start += randomDie;
+                    }
+
+                }
+
+                Console.WriteLine("positions are in the game = " + start);
+
             }
            
         }
