@@ -41,6 +41,7 @@ namespace Snake_Ladder
                 }
 
                 Console.WriteLine("positions are in the game = " + start);
+                Console.WriteLine("no of roll a die = " + rollDie);
 
             }
            
